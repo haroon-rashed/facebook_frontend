@@ -1,6 +1,6 @@
-import React from 'react';
-import FundRaiserSidebar from './FundRaiserSidebar';
-import Fundraisers from './Fundraisers';
+import React from "react";
+import Fundraisers from "./Fundraisers";
+import FundRaiserSidebar from "./FundRaiserSidebar";
 
 const FundraisersPage = () => {
   return (

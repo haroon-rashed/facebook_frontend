@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
-import { FaSearch, FaQuestionCircle, FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import { BsList } from 'react-icons/bs';
+import React, { useState } from "react";
+import {
+  FaSearch,
+  FaQuestionCircle,
+  FaChevronDown,
+  FaChevronRight,
+} from "react-icons/fa";
+import { BsList } from "react-icons/bs";
 
 export default function FundRaiserSidebar() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -9,7 +14,7 @@ export default function FundRaiserSidebar() {
     "Who can create fundraiser?",
     "How do charities receive donations?",
     "How do taxes work?",
-    "How do fees work?"
+    "How do fees work?",
   ];
 
   const toggleIndex = (index) => {
@@ -69,10 +74,11 @@ export default function FundRaiserSidebar() {
       </div>
 
       <p className="text-sm mt-4 text-gray-700">
-        Learn more about fundraisers in the{' '}
+        Learn more about fundraisers in the{" "}
         <a href="#" className="text-blue-600 underline">
           Help Centre
-        </a>.
+        </a>
+        .
       </p>
     </div>
   );
