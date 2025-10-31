@@ -18,7 +18,7 @@ import VideoPage from "./pages/videos/VideoPage";
 import ChatContainer from "./components/home/chat/ChatContainer";
 import io from "socket.io-client";
 import VideoCallZego from "./video_call/VideoCall";
-const socket = io.connect("http://localhost:5174");
+const socket = io.connect("https://facebook-backend-paa2.vercel.app/");
 const App = () => {
   const [show, setShow] = useState(false);
 

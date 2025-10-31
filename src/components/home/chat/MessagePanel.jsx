@@ -21,7 +21,7 @@ import { useSelector } from 'react-redux';
 import { FaVideo } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
-const socket = io.connect('http://localhost:5174');
+const socket = io.connect('https://facebook-backend-paa2.vercel.app/');
 
 export default function MessagePanel({ receiver_id, username, show, setShow }) {
     const [open, setOpen] = useState(false);

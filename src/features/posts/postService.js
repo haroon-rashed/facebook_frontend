@@ -1,5 +1,5 @@
 import axios from "axios";
-const base_url = "http://localhost:5174/api/posts";
+const base_url = "https://facebook-backend-paa2.vercel.app/api/posts";
 
 export const addPost = async (postData) => {
   const response = await axios.post(

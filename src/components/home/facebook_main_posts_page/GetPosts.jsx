@@ -34,7 +34,7 @@ const GetPosts = ({
   const { posts } = useSelector((state) => state.album)
 
   const getLikes = async () => {
-    let response = await axios.get(`http://localhost:5174/api/posts/get-reactions/${_id}`);
+    let response = await axios.get(`https://facebook-backend-paa2.vercel.app/api/posts/get-reactions/${_id}`);
     setLikes(response.data);
   };
 

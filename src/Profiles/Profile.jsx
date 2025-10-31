@@ -13,43 +13,36 @@ import { IoIosSettings } from "react-icons/io";
 import Navbar from "../components/home/Navbar";
 import { BsChat, BsChatDots, BsGridFill } from "react-icons/bs";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import { getMyData } from "../features/users/userSlice";
 import MessagePanel from "../components/home/chat/MessagePanel";
 import { Toast } from "../video_call/ToastVideo";
-const socket = io.connect('http://localhost:5174');
-import io from 'socket.io-client'
+const socket = io.connect("https://facebook-backend-paa2.vercel.app/");
+import io from "socket.io-client";
 
 const Profile = ({ show, setShow }) => {
-
-  const { myInfo } = useSelector((state) => state.auth)
-  const { id } = useParams()
-  const { user } = useSelector((state) => state.auth)
-  const dispatch = useDispatch()
+  const { myInfo } = useSelector((state) => state.auth);
+  const { id } = useParams();
+  const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMyData(id))
-  }, [])
+    dispatch(getMyData(id));
+  }, []);
 
-  const [call, setCall] = useState(false)
-  const [caller, setCaller] = useState(null)
-
-
-
-
+  const [call, setCall] = useState(false);
+  const [caller, setCaller] = useState(null);
 
   useEffect(() => {
-    socket.on('received_call', (data) => {
-      console.log(data)
+    socket.on("received_call", (data) => {
+      console.log(data);
       if (data.receiver_id == user?._id) {
-        setCall(true)
-        setCaller(data?.sender_name)
-        let audio = new Audio('/ringing.mp3')
-        audio.play()
+        setCall(true);
+        setCaller(data?.sender_name);
+        let audio = new Audio("/ringing.mp3");
+        audio.play();
       }
-    })
-  }, [])
-
-
+    });
+  }, []);
 
   return (
     <>
@@ -91,7 +84,12 @@ const Profile = ({ show, setShow }) => {
                   + Add to story
                 </button>
 
-                <MessagePanel setShow={setShow} show={show} receiver_id={myInfo?._id} username={`${myInfo?.f_name} ${myInfo?.l_name}`} />
+                <MessagePanel
+                  setShow={setShow}
+                  show={show}
+                  receiver_id={myInfo?._id}
+                  username={`${myInfo?.f_name} ${myInfo?.l_name}`}
+                />
                 <button className="bg-gray-200  rounded-md px-4 py-2 whitespace-nowrap ">
                   <MdEdit className="inline" /> Edit profile
                 </button>
@@ -134,13 +132,15 @@ const Profile = ({ show, setShow }) => {
           <div className="rounded-md p-5 shadow bg-white">
             <p className="font-bold text-xl  mb-4">Intro</p>
             <div className="flex flex-col gap-4">
-              {['Add Bio', 'Edit Details', 'Add Features'].map((item, index) => {
-                return <button className="w-full rounded-md bg-gray-200 py-2 ">
-                  {item}
-                </button>
-              })}
-
-
+              {["Add Bio", "Edit Details", "Add Features"].map(
+                (item, index) => {
+                  return (
+                    <button className="w-full rounded-md bg-gray-200 py-2 ">
+                      {item}
+                    </button>
+                  );
+                }
+              )}
             </div>
           </div>
           <div className="rounded-md p-5 shadow bg-white flex items-center justify-between">

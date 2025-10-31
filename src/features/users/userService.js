@@ -1,5 +1,5 @@
 import axios from "axios";
-const base_url = "http://localhost:5174/api/users";
+const base_url = "https://facebook-backend-paa2.vercel.app/api/users";
 export const regUserService = async (userData) => {
   const response = await axios.post(`${base_url}/reg-user`, userData);
   if (response.data) {
