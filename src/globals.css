@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji+Compat&display=swap');
+
+.noto-emoji-animated {
+  font-family: 'Noto Color Emoji Compat', sans-serif;
+}
+
+@keyframes emoji-animation {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.hide-arrows::-webkit-scrollbar {
+  width: 0;
+}
+
+.bg-image {
+  background-size: 100% 100% !important;
+  background-position: 100% 100% !important;
+}
+
+.hr {
+  height: 1px !important;
+  background-color: #e5e7eb !important;
+  border: none !important;
+  margin: 0.5rem 0;
+}
+
+.post-caption::placeholder {
+  font-size: 1.5rem !important;
+}
+.post-caption {
+  resize: none;
+}
